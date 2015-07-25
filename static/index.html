@@ -1,0 +1,71 @@
+<html>
+<head>
+    <title>Wu-Tang Clan Name Generator As A Service (WuNameAAS)</title>
+
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+</head>
+
+<body style="">
+<div class="container">
+    <div class="hero-unit">
+        <h1>WuNameAAS</h1>
+
+        <h2>Wu-Tang Clan Name Generator As A Service</h2>
+    </div>
+</div>
+<div class="container">
+    <div class="content" style="margin-left:50px;">
+        <h2 id="introduction">Introduction</h2>
+
+        <p>WuNameAAS (Wu-Tang Clan Name Generator As A Service) provides a modern, RESTful, scalable solution to the
+            finding your Wu-Tang Clan Name.</p>
+
+        <h2 id="api">API</h2>
+
+        <h3 id="contentnegotiation">Content Negotiation</h3>
+
+        <p>WuNameAAS will respond to the following 'Accept:' values with appropriate content</p>
+
+        <ul>
+            <li>text/plain - Content will be returned as a plain string.</li>
+            <li>application/json - Content will be returned as a JSON object <code>{ message: 'message' }</code></li>
+            <li>text/html - Content will be returned as an HTML page with a twitter bootstrap hero unit, containing the
+                message and the subtitle.
+            </li>
+            <li>application/xml - Content will be returned as a XML document.</li>
+        </ul>
+
+        <h3 id="operations">Operations</h3>
+
+        <table class="table">
+            <tr>
+                <th>Path</th>
+                <th>Description</th>
+            </tr>
+
+            <tr>
+                <td>/wuami/:from</td>
+                <td>Will return content of the form ':wuname'<br>For e.g. <a href='/wuami/Rahul' target='_blank'>/wuami/Rahul</a>
+                    will return 'Irate Worlock'
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>/enterthewu/:from</td>
+                <td>Will return content of the form ':from from this day forward you will also be known as :wuname'<br>For
+                    e.g. <a href='/enterthewu/Rahul' target='_blank'>/enterthewu/Rahul</a> will return 'Rahul from this
+                    day forward you will also be known as Irate Worlock'
+                </td>
+            </tr>
+        </table>
+
+        <p>All contributions are very welcome.</p>
+
+        <p><a href="https://github.com/rahulparsani/WuNameAAS">Fork me on github</a></p>
+
+        <p>Created by <a href="https://twitter.com/sindhiparsani">@sindhiparsani</a></p>
+    </div>
+</div>
+</body>
+</html>

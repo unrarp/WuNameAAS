@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wunameaas:response xmlns:wunameaas="http://wunameaas.com/wuname">
+    <wunameaas:message>{{ message }}</wunameaas:message>
+</wunameaas:response>
