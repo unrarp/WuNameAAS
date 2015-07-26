@@ -1,8 +1,11 @@
 #!flask/bin/python
 from flask import Flask, render_template, request, jsonify
 import subprocess
+import sys
 
 app = Flask(__name__)
+reload(sys)
+sys.setdefaultencoding('utf8')
 wu_adjs = []
 wu_nouns = []
 
