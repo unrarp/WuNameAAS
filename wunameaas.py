@@ -52,7 +52,7 @@ def get_wu_name(name):
     if len(wu_nouns) == 0:
         wu_nouns = read_file('wu_nouns.txt')
 
-    proc = subprocess.Popen("php index.php " + str(seed) + " " + str(len(wu_adjs)) + " " + str(len(wu_nouns)),
+    proc = subprocess.Popen("php random.php " + str(seed) + " " + str(len(wu_adjs)) + " " + str(len(wu_nouns)),
                             shell=True, stdout=subprocess.PIPE)
     script_response = proc.stdout.read().split(',')
 
