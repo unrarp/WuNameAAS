@@ -1,17 +1,13 @@
 #!flask/bin/python
 from flask import Flask, render_template, request, jsonify
 import subprocess
-import sys
 
 app = Flask(__name__)
-reload(sys)
-sys.setdefaultencoding('utf8')
 wu_adjs = []
 wu_nouns = []
 
 LINE_ONE = '%s from this day forward'
 LINE_TWO = ' you will also be known as '
-
 
 @app.route('/')
 def index():
@@ -57,7 +53,7 @@ def get_wu_name(name):
 
     proc = subprocess.Popen("php random.php " + str(seed) + " " + str(len(wu_adjs)) + " " + str(len(wu_nouns)),
                             shell=True, stdout=subprocess.PIPE)
-    script_response = proc.stdout.read().split(',')
+    script_response = proc.stdout.readline().decode().split(',')
 
     return wu_adjs[int(script_response[0])] + ' ' + wu_nouns[int(script_response[1])]
 
